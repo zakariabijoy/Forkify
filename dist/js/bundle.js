@@ -3843,22 +3843,9 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
   !*** ./src/js/index.js ***!
   \*************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-eval("\n\nvar _searchView = __webpack_require__(/*! ./views/searchView */ \"./src/js/views/searchView.js\");\n\nvar _searchView2 = _interopRequireDefault(_searchView);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar a = _searchView2.default; // Global app controller\n\nconsole.log(a);\n\n//# sourceURL=webpack:///./src/js/index.js?");
-
-/***/ }),
-
-/***/ "./src/js/views/searchView.js":
-/*!************************************!*\
-  !*** ./src/js/views/searchView.js ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nvar add = exports.add = function add(a, b) {\n  return a + b;\n};\nvar multiply = exports.multiply = function multiply(a, b) {\n  return a * b;\n};\nvar id = exports.id = 23;\n\n//# sourceURL=webpack:///./src/js/views/searchView.js?");
+eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nSyntaxError: F:/PROJECTS/JavaScript/Forkify/src/js/index.js: Unexpected token (100:87)\\n\\n\\u001b[0m \\u001b[90m  98 | \\u001b[39m\\u001b[90m// window.addEventListener('hashchange', controlRecipe);\\u001b[39m\\n \\u001b[90m  99 | \\u001b[39m\\u001b[90m// window.addEventListener('load', controlRecipe);\\u001b[39m\\n\\u001b[31m\\u001b[1m>\\u001b[22m\\u001b[39m\\u001b[90m 100 | \\u001b[39m[\\u001b[32m'hashchange'\\u001b[39m\\u001b[33m,\\u001b[39m \\u001b[32m'load'\\u001b[39m]\\u001b[33m.\\u001b[39mforEach(event \\u001b[33m=>\\u001b[39m window\\u001b[33m.\\u001b[39maddEventListener(event\\u001b[33m,\\u001b[39m controlRecipe))\\u001b[33m;\\u001b[39m\\n \\u001b[90m     | \\u001b[39m                                                                                       \\u001b[31m\\u001b[1m^\\u001b[22m\\u001b[39m\\u001b[0m\\n\");\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 
