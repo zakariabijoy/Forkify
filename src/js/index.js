@@ -3,10 +3,12 @@
 import Search from "./models/Search";
 import Recipe from "./models/Recipe";
 import List from "./models/List";
+import Likes from "./models/Like";
 import * as searchView from './views/searchView';
 import * as recipeView from './views/recipeView';
 import * as listView from './views/listView';
 import { elements, renderLoader, clearLoader } from "./views/base";
+
 
 /** Global state of the app
  * - Search Object
@@ -129,6 +131,8 @@ const controlList = () =>{
 
 };
 
+
+
 // handle delete and update list evenets
 elements.shopping.addEventListener('click', e=>{
 
@@ -157,6 +161,38 @@ elements.shopping.addEventListener('click', e=>{
 
 
 
+/**
+ * List Controller     ---------------------------------------------------------------------------
+ */
+const controlLike = () =>{
+    if(!state.likes) state.likes = new Likes();
+    const currentId = state.recipe.id;
+
+    // user has not yet liked current recipe
+    if(!state.likes.isLiked(currentId)){
+        // add like to state
+        const newLike = state.likes.addLike(
+            currentId,
+            state.recipe.title,
+            state.recipe.author,
+            state.recipe.img
+        );
+
+        // toggle the  to ui list
+            console.log(state.likes);
+
+        // user has liked current recipe
+    }else{
+        // remove like from the state
+        state.likes.deleteLike(currentId);;
+
+        // toggle the like button
+
+        // remove like from ui list
+        console.log(state.likes);
+    }
+}
+
 
 // handling recipe button clicks
 elements.recipe.addEventListener('click', e=>{
@@ -172,7 +208,11 @@ elements.recipe.addEventListener('click', e=>{
         state.recipe.updateServings('inc');
         recipeView.updateServingsIngredients(state.recipe);
     } else if (e.target.matches('.recipe__btn--add, .recipe__btn--add *')){
+        // add ingredients to shopping list
         controlList();
+    }else if(e.target.matches('.recipe__love, .recipe__love *')){
+        //like controller
+        controlLike();
     }
    
 });
